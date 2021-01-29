@@ -4,3 +4,8 @@ print("Hello" + " " + "John!")
 
 # Entering Data
 print("Hello " + input("What is your name? ") + "!")
+
+# Variables
+
+name = input("What is your name? ")
+print(name)
