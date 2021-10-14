@@ -16,5 +16,9 @@
 # **
 # * /
 # + -
-
+# Will print 7.0
 print(3 * 3 + 3 / 3 - 3)
+# Will print 3.0
+print(3 * (3 + 3) / 3 - 3)
+
+print(67.2 ** 2)
