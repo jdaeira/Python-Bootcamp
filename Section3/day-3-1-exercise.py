@@ -7,3 +7,4 @@ if result == 0:
     print("That number is Even!")
 else:
     print("That number is Odd!")
+
