@@ -9,4 +9,16 @@ elif year % 100 == 0 and year % 400 == 0:
 else:
     print("That is not a leap year!")
 
-    
+   
+year1 = int(input("Please enter a year to check: "))
+
+if year1 % 4 == 0:
+    if year1 % 100 == 0:
+        if year1 % 400 == 0:
+            print("Leap Year!")
+        else:
+            print("Not Leap Year!")
+    else:
+        print("Leap Year!")
+else:
+    print("Not Leap Year!")
