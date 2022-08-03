@@ -5,7 +5,10 @@ bill = 0
 if height >= 120:
     print("You can ride the Roller Coaster!")
     age = int(input("What is your age? "))
-    if age > 18:
+    if age >= 45 and age <= 55:
+        bill = 0
+        print("Everything is going to be ok. Have a free ride on us!")
+    elif age > 18 :
         bill = 12
         print("Adult tickets are $12")
     elif age >= 12 and age <= 18:
