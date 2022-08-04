@@ -11,8 +11,22 @@ states_of_america = ["Delaware", "Pennsylvania", "New Jersey", "Georgia",
 
 print(states_of_america[-1]) ## -1 starts from the end of the list
 
-states_of_america.append("Puerto Rico") ## adds to the list
+# states_of_america.append("Puerto Rico") ## adds to the list
 
-states_of_america.extend(["John's Funhouse", "Jackie Land"])
+# states_of_america.extend(["John's Funhouse", "Jackie Land"])
 
 print(states_of_america)
+
+# dirty_dozen = ["Strawberries", "Spinich", "Kale", "Nectarines", "Apples",
+# "Grapes", "Peaches", "Cherries", "Pears", "Tomatoes", "Celery", "Potatoes"]
+
+fruits = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches",
+"Cherries", "Pears"]
+
+vegetables = ["Spinich", "Kale", "Tomatoes", "Celery", "Potatoes"]
+
+dirty_dozen = [fruits, vegetables] # This is a nested list
+
+print(dirty_dozen)
+
+print(dirty_dozen[1])
