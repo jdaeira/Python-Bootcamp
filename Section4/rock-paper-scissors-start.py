@@ -27,36 +27,26 @@ scissors = '''
 ---.__(___)
 '''
 
-#Write your code below this line 👇
+#Write your code below this line 
+images = [rock, paper, scissors]
 user = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. "))
 
-if user == 0:
-    print(rock)
-elif user == 1:
-    print(paper)
-else:
-    print(scissors)
+if user > len(images) - 1 or user < 0:
+    print("That's an invalid entry. You Lose!")
+    exit()
+
+print(images[user])
 
 computer = random.randint(0, 2)
 
 print("Computer chose:")
 
-if computer == 0:
-    print(rock)
-elif computer == 1:
-    print(paper)
-else:
-    print(scissors)
+print(images[computer])
 
-if user == 0 and computer == 0:
+if user == computer:
     print("It's a Draw!")
-elif user == 1 and computer == 1:
-    print("It's a Draw!")
-elif user == 2 and computer == 2:
-    print("It's a Draw!")
-
-
-if (user == 0 and computer == 2) or (user == 2 and computer == 1) or (user == 1 and computer == 0):
+elif (user == 0 and computer == 2) or (user == 2 and computer == 1) or (user == 1 and computer == 0):
     print("You Win!")
-elif (computer == 0 and user == 2) or (computer == 2 and user == 1) or (computer == 1 and user == 0):
+else:
     print("You Lose!")
+
