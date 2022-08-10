@@ -1,5 +1,4 @@
 #Step 1 
-from multiprocessing.connection import wait
 import random
 
 word_list = ["aardvark", "baboon", "camel"]
