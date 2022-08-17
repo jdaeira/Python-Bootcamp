@@ -27,4 +27,38 @@ for key in programming_dictionary:
     print(key)
     print(programming_dictionary[key])
 
-    
+#####################################################################  
+
+#Nesting
+capitals = {
+    "France": "Paris",
+    "Germany": "Berlin"
+}
+
+#Nesting a List in a Dictionary
+travel_log = {
+    "France": ["Paris", "Lille", "Dijon"],
+    "Germany": ["Berlin", "Hamburg", "Stuttgart"]
+}
+
+#Nesting a Dictionary in a Dictionary
+travel_log = {
+    "France": {"cities_visited": ["Paris", "Lille", "Dijon"], "total_visits": 12},
+    "Portugal": {"cities_visited": ["Cascais", "Sintra", "Estoril"], "total_visits": 20},
+}
+
+#Nesting a Dictionary in a List
+travel_log = [
+    {
+        "country": "France",
+        "cities_visited": ["Paris", "Lille", "Dijon"], 
+        "total_visits": 12
+    },
+    {
+        "country": "Portugal", 
+        "cities_visited": ["Cascais", "Sintra", "Estoril"],
+        "total_visits": 20
+    },
+]
+
+

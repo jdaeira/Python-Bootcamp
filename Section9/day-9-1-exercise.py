@@ -22,6 +22,5 @@ for student in student_scores:
     else:
         student_grades[student] = "Fail"
 
-
 # 🚨 Don't change the code below 👇
 print(student_grades)
