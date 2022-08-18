@@ -36,19 +36,19 @@ capitals = {
 }
 
 #Nesting a List in a Dictionary
-travel_log = {
+travel_log_dic = {
     "France": ["Paris", "Lille", "Dijon"],
     "Germany": ["Berlin", "Hamburg", "Stuttgart"]
 }
 
 #Nesting a Dictionary in a Dictionary
-travel_log = {
+travel_log_nest_dic = {
     "France": {"cities_visited": ["Paris", "Lille", "Dijon"], "total_visits": 12},
     "Portugal": {"cities_visited": ["Cascais", "Sintra", "Estoril"], "total_visits": 20},
 }
 
 #Nesting a Dictionary in a List
-travel_log = [
+travel_log_nest_list = [
     {
         "country": "France",
         "cities_visited": ["Paris", "Lille", "Dijon"], 
