@@ -37,15 +37,21 @@ capitals = {
 
 #Nesting a List in a Dictionary
 travel_log_dic = {
-    "France": ["Paris", "Lille", "Dijon"],
+    "France": ["Paris", "Lille", "Dijon", "Lyon"],
     "Germany": ["Berlin", "Hamburg", "Stuttgart"]
 }
 
+for country in travel_log_dic:
+    print(country)
+    for cities in range(len(travel_log_dic[country])):
+        print(travel_log_dic[country][cities])
 #Nesting a Dictionary in a Dictionary
 travel_log_nest_dic = {
     "France": {"cities_visited": ["Paris", "Lille", "Dijon"], "total_visits": 12},
     "Portugal": {"cities_visited": ["Cascais", "Sintra", "Estoril"], "total_visits": 20},
 }
+
+print(travel_log_nest_dic["Portugal"])
 
 #Nesting a Dictionary in a List
 travel_log_nest_list = [
@@ -61,4 +67,4 @@ travel_log_nest_list = [
     },
 ]
 
-
+print(travel_log_nest_list[1])
