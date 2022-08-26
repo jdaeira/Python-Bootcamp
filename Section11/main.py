@@ -42,11 +42,18 @@ def play_game():
     if dealer_score == 21 and user_score == 21:
         print(f"Computer's final hand: {dealer_cards}, final score: {dealer_score}")
         print("Push! No One Wins")
-        exit()
     elif dealer_score == 21 and user_score != 21:
         print(f"Computer's final hand: {dealer_cards}, final score: {dealer_score}")
         print("Dealer Wins!")
-        exit()
+    elif user_score == 21 and dealer_score != 21:
+        print(f"Computer's final hand: {dealer_cards}, final score: {dealer_score}")
+        print("You Win!")
+    else:
+        deal_cards()
+
+def deal_cards():
+    global user_score
+    global dealer_score
 
     deal_cards = True
     while deal_cards == True:
@@ -68,14 +75,22 @@ def play_game():
 
     print(f"Computer's final hand: {dealer_cards}, final score: {dealer_score}")
 
-    test_function()
+    check_winner()
 
-def test_function():
-    dealer_score = 25
-    user_score = 23
-    print(dealer_score)
-    print(user_score)
+def check_winner():
+    global user_score
+    global dealer_score
 
+    if user_score > dealer_score and user_score < 22:
+        print("You Win!")
+    elif dealer_score > user_score and dealer_score < 22:
+        print("Dealer Wins!")
+    elif user_score < 22 and dealer_score > 21:
+        print("You Win!") 
+    elif dealer_score < 22 and user_score > 21:
+        print("Dealer Wins!")
+    elif dealer_score == user_score and user_score < 22 and dealer_score < 22:
+        print("Push!")
 
 print(logo)
 play = True
@@ -90,4 +105,5 @@ while play == True:
        get_cards("dealer", 2)
        play_game()
     else:
+       print("Good Bye! Thank You for Playing!")
        play = False
