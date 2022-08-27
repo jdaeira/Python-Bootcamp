@@ -7,9 +7,7 @@ from art import logo
 ## The the Ace can count as 11 or 1.
 ## Use the following list as the deck of cards:
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-## The cards in the list have equal probability of being drawn.
-## Cards are not removed from the deck as they are drawn.
-## The computer is the dealer.
+
 
 user_cards = []
 dealer_cards = []
@@ -24,6 +22,18 @@ def get_cards(player_type, num_cards):
         for _ in range(num_cards):
             card = random.randint(0, 12)
             dealer_cards.append(cards[card])
+
+def check_aces(player_type):
+    if player_type == "user":
+        for i in range(len(user_cards)):
+            if user_cards[i] == 11 and sum(user_cards) > 21:
+               user_cards[i] = 1
+                
+    else:
+        for i in range(len(dealer_cards)):
+            if dealer_cards[i] == 11 and sum(dealer_cards) > 21:
+               dealer_cards[i] = 1
+                
 
 def get_score(player_list):
     score = sum(player_list)
@@ -61,6 +71,7 @@ def deal_cards():
 
         if more_cards == "y":
             get_cards("user", 1)
+            check_aces("user")
             user_score = get_score(user_cards)
             print(f"Your cards: {user_cards}, current score: {user_score}")
             print(dealer_cards[0])
@@ -71,6 +82,7 @@ def deal_cards():
 
     while dealer_score < 17:
         get_cards("dealer", 1)
+        check_aces("dealer")
         dealer_score = get_score(dealer_cards)
 
     print(f"Computer's final hand: {dealer_cards}, final score: {dealer_score}")
@@ -91,6 +103,8 @@ def check_winner():
         print("Dealer Wins!")
     elif dealer_score == user_score and user_score < 22 and dealer_score < 22:
         print("Push!")
+    elif dealer_score > 21 and user_score > 21:
+        print("Both Busted! Nobody Wins")
 
 print(logo)
 play = True
@@ -102,7 +116,9 @@ while play == True:
 
     if choice == "y":
        get_cards("user", 2)
+       check_aces("user")
        get_cards("dealer", 2)
+       check_aces("dealer")
        play_game()
     else:
        print("Good Bye! Thank You for Playing!")

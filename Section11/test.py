@@ -1,10 +1,8 @@
-cards = [11, 11]
+cards = [11, 11, 11, 9]
 
-count = 0
-for i in cards:
-    if 11 in cards:
-        cards[count] = 1
-        count += 1
-        exit()
+for i in range(len(cards)):
+    if cards[i] == 11 and sum(cards) > 21:
+        cards[i] = 1
+    
 
 print(cards)
