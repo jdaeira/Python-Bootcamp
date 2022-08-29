@@ -8,11 +8,13 @@ from art import logo
 ## Use the following list as the deck of cards:
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
-
+#Initialize Global Variables
 user_cards = []
 dealer_cards = []
 user_score = 0
 dealer_score = 0
+
+#This Function deals the cards for the player and computer
 def get_cards(player_type, num_cards):
     if player_type == "user":
         for _ in range(num_cards):
@@ -23,6 +25,7 @@ def get_cards(player_type, num_cards):
             card = random.randint(0, 12)
             dealer_cards.append(cards[card])
 
+#This Function checks is there are Aces in the deck and deals with them
 def check_aces(player_type):
     if player_type == "user":
         for i in range(len(user_cards)):
@@ -34,11 +37,12 @@ def check_aces(player_type):
             if dealer_cards[i] == 11 and sum(dealer_cards) > 21:
                dealer_cards[i] = 1
                 
-
+#This function get the score for the player or computer
 def get_score(player_list):
     score = sum(player_list)
     return score
 
+#This Function checks if there is a winner for the first part of them game
 def play_game():
     global user_score
     global dealer_score
@@ -61,6 +65,7 @@ def play_game():
     else:
         deal_cards()
 
+#This Function deals more cards if no one wins in the initial deal of cards
 def deal_cards():
     global user_score
     global dealer_score
@@ -89,6 +94,7 @@ def deal_cards():
 
     check_winner()
 
+#This Function checks if there is a winner
 def check_winner():
     global user_score
     global dealer_score
@@ -106,6 +112,7 @@ def check_winner():
     elif dealer_score > 21 and user_score > 21:
         print("Both Busted! Nobody Wins")
 
+#Start of the game
 print(logo)
 play = True
 while play == True:
