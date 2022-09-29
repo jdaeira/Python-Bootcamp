@@ -27,3 +27,21 @@ print(f"Compare B: {data[numberB]['name']}, a {data[numberB]['description']}, fr
 
 more = input("Who has more followers? Type 'A' or 'B': ").upper()
 print(more)
+
+score = 0
+
+if more == "A":
+    if data[numberA]["follower_count"] > data[numberB]["follower_count"]:
+        score += 1
+        print("You are correct!")
+    else:
+        print("You lost")
+elif more == "B":
+    if data[numberB]["follower_count"] > data[numberA]["follower_count"]:
+        score += 1
+        print("You are correct!")
+    else:
+        print("You lost")
+
+print(score)
+ 
